@@ -3,19 +3,26 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
     "target": "ES2021",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "module": "commonjs",
+    "module": "commonjs", // commonjs или nodenext
     "lib": [
       "ES2021",
       "dom"
-    ],
+    ], // globals - 
 
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
-    "strict": true,
+    // strict mode
+    "strict": true, // он по умолчанию false
+    // "strictNullChecks": false,
     
     "outDir": "./dest",  /* Enable all strict type-checking options. */
     "declaration": true,
+
+    "types": [], // Когда мы работаем со сторонними либами, типа jest и т.д.
+
+    // "allowJs": true, //
+    // "checkJs": false,
 
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */

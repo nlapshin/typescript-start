@@ -1,4 +1,35 @@
-1. Какой тип выведет TypeScript для каждого из этих значений?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// tsc - это typescript cli. Для сборки и прочего.
+// ts-node - компилит и запускает. Подходит под dev режим.
+// ts-node + nodemon или ts-node-dev.
+// tsup - для быстрой сборки, она esbuild
+// swc
+// eslint + plugins для typescript.
+
+
+<!-- 1. Какой тип выведет TypeScript для каждого из этих значений?
 a) let a = 1042
 б) let b = 'apples and oranges'
 в) const c = 'pineapples'
@@ -29,4 +60,14 @@ let k: never = 4
 let l: unknown = 4
 let m = l * 2
 // Ошибка TS2571: объект имеет тип
-// 'unknown'.
+// 'unknown'. -->
+
+
+typescript -> собрали получили js. d.ts - декларируем как наш код работает.
+@types/node
+@types/jest
+@types/mocha и т.д.
+
+или index.d.ts
+
+// declare files
