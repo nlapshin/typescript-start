@@ -35,5 +35,9 @@ function sum(a, b) {
 function voidFn() {
     console.log('void');
 }
+const log = (namespace, message = 'log') => {
+    console.log(`${namespace}: ${message}`);
+};
+const green = 'green';
 setInterval(() => {
 }, 10000000);

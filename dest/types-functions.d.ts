@@ -10,3 +10,7 @@ type MyObject = {
 declare const obj: Record<string, string | number>;
 declare function sum(a: unknown, b: unknown): string | number | undefined;
 declare function voidFn(): void;
+type Log = (n: string, m: string) => void;
+type TypeColor = 'red' | 'black' | 'green';
+declare const log: Log;
+declare const green: TypeColor;
