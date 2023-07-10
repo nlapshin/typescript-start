@@ -1,4 +1,5 @@
-function reverseArray<T>(array: T[]): T[] {
+// Пример 1
+function reverseArray<T = null[]>(array: T[]): T[] {
   return array.reverse();
 }
 
@@ -8,7 +9,18 @@ const reversedNumbers = reverseArray(numbers); // тип: number[]
 const strings = ['a', 'b', 'c'];
 const reversedStrings = reverseArray(strings); // тип: string[]
 
-class Queue<T> {
+
+function transformToString<T extends Object>(value: T): string {
+  return value.toString()
+}
+
+interface IQueue<T> {
+  enqueue(item: T): void;
+  dequeue(): T | undefined;
+}
+
+// Пример 2
+class Queue<T> implements IQueue<T> {
   private items: T[] = [];
 
   enqueue(item: T) {
@@ -47,3 +59,11 @@ function getLength<T extends Lengthy>(item: T): number {
 const stringLength = getLength('hello'); // тип: number (5)
 const arrayLength = getLength([1, 2, 3, 4, 5]); // тип: number (5)
 const objectLength = getLength({ length: 10 }); // тип: number (10)
+const notLength = getLength({ length100: 10 }); // тип: number (10)
+
+// Поставили библиотеку. И надо 
+// Ситуация - пакет написан на javascript
+// В этом случае создают так называемые файлы с декларация.
+// @types/node.
+
+// experimentalDecorators: true

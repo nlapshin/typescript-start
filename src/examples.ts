@@ -93,10 +93,77 @@
 // // }
 
 
+// Классы
 
+enum CarColor {
+  black = 'black',
+  white = 'white'
+}
 
+async function delay(timeout = 100) {
+  return new Promise((res) => setTimeout(res, timeout));
+}
 
+export interface ICar {
+  name: string;
+  getInfo: () => { name: string, color: CarColor };
+}
 
+// base class;
+// class Car implements ICar {
+//   // // public, private, protected, static.
+//   // private name: string; // Приватное свойство.
+//   // public color: CarColor;
+
+//   public name!: string;
+
+//   static async make() {
+//     await delay();
+
+//     return new Car({ name: 'car', color: CarColor.white})
+//   }
+  
+//   // для инициализации класса
+//   constructor(private info: { name: string, color: CarColor }) {
+//     // this.name = name;
+//     // this.color = color;
+
+//     console.log(this.name);
+//   }
+
+//   public getInfo() {
+//     return this.info
+//   }
+// }
+
+// ;(async() => {
+//   const car = await Car.make();
+
+//   console.log(car.getInfo());
+// })()
+
+// class Audi extends Car {
+//   constructor(
+//     name: string = 'audi', 
+//     public color = CarColor.white
+//   ) {
+//     super(name, color);
+//   }
+
+//   public getInfo() {
+//     return super.getInfo();
+//   }
+// }
+
+// const car = new Car();
+
+// car.name;
+// car.color;
+// car.getInfo();
+
+// const audi = new Audi();
+
+// audi.getInfo();
 
 
 
@@ -161,3 +228,20 @@
 // setInterval(() => {
 
 // }, 10000000)
+
+interface Todo {
+  title: string;
+  description: string;
+}
+
+
+type TodoOptions = Partial<Todo>;
+
+
+interface PrivateUser {
+  username: string;
+  password: string;
+  superSecret: string;
+}
+
+type PublicUser = Pick<PrivateUser, 'username'>;

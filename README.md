@@ -42,12 +42,14 @@ typescript => javascript.
 - unknown - неизвестный тип, который надо уточнить дальше.
 - never - недостижимый ни к чему.
 
+# Какой план?
 
-
-
-
-
-
+- Тема прошлой лекции.
+- class
+- generic
+- namespaces + type-definitions
+- decorators
+- utils + etc
 
 
 

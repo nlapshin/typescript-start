@@ -1,14 +1,15 @@
 function loggedMethod(prefix: string) {
   return function loggedMethod(originalMethod: any, _context: any) {
     function replacementMethod(this: any, ...args: any[]) {
-        console.log(prefix + "LOG: Entering method.")
+        console.log(`${prefix} LOG: Entering method.`)
         const result = originalMethod.call(this, ...args);
-        console.log(prefix + "LOG: Exiting method.")
+        console.log(`${prefix} LOG: Entering method.`)
         return result;
     }
     return replacementMethod;
   }
 }
+
 
 class Person {
   name: string;
@@ -16,9 +17,9 @@ class Person {
       this.name = name;
   }
 
-  @loggedMethod("⚠️")
+  @loggedMethod("Prefix")
   greet() {
-      console.log(`Hello, my name is ${this.name}.`);
+    console.log(`Hello, my name is ${this.name}.`); 
   }
 }
 const p = new Person("Ray");
