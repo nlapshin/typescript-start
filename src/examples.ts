@@ -17,80 +17,80 @@
 // never - это недостижимость.
 
 
-let a = 'test'; // String
-const b = 'test'; // test
+// let a = 'test'; // String
+// const b = 'test'; // test
 
-let d = [true, true, false]; // boolean[]
-const d1 = [true, true, false]; // boolean[]
-const d2 = [true] as const; // boolean[]
-
-
-const e: { [p: string]: string }  = {type: 'ficus'} // Какой будет тип? { type: 'string' };
-
-e.newKey = 'newValue';
+// let d = [true, true, false]; // boolean[]
+// const d1 = [true, true, false]; // boolean[]
+// const d2 = [true] as const; // boolean[]
 
 
-interface IUser {
-  name: string;
-  email: string;
-};
+// const e: { [p: string]: string }  = {type: 'ficus'} // Какой будет тип? { type: 'string' };
 
-type User = {
-  name?: string;
-  email?: string; // ? - это опциональный ключ
-};
-
-const user: IUser = { name: 'Nik', email: 'email' }; // Вот так писать код.
-const user2 = { name: 'Nik', email: 'email', phone: 'test' } as IUser; // Я знаю, что этот объект будет IUser
-
-// Тесты. 
-
-// const user3 = { name: 'Nik', email: 'email', phone: 'test' };
-
-// const user3 = { name: 'Nik', email: 'email', phone: 'test' } as const;
-
-// user3.newKey = 'test';
-// user3.name = 'test';
-
-// Record<string, string> => { [key: string]: string};
-
-const user4: Record<string, string> = {};
-
-type Keys = 'red' | 'green' | 'blue';
-
-const colorObj: Record<Keys, string> = {
-  red: 'red',
-  green: 'green',
-  blue: 'blue',
-}
-
-type UserKeys = keyof IUser;
-
-type Colors = { [K in Keys]: string }
-
-// Partial<IUser> - сделает весь интефейс опциональным
-// 
+// e.newKey = 'newValue';
 
 
-interface IPublicUser {
-  name: string;
-  email: string;
-};
-
-interface IPrivateUser extends IPublicUser {
-  password: string;
-};
-
-type PublicUser = Omit<IPrivateUser, 'password'>;
-
-
-// type Record<K extends keyof any, T> = {
-//   [P in K]: T;
+// interface IUser {
+//   name: string;
+//   email: string;
 // };
 
-// interface IColor {
-//   [P in Keys]: string;
+// type User = {
+//   name?: string;
+//   email?: string; // ? - это опциональный ключ
+// };
+
+// const user: IUser = { name: 'Nik', email: 'email' }; // Вот так писать код.
+// const user2 = { name: 'Nik', email: 'email', phone: 'test' } as IUser; // Я знаю, что этот объект будет IUser
+
+// // Тесты. 
+
+// // const user3 = { name: 'Nik', email: 'email', phone: 'test' };
+
+// // const user3 = { name: 'Nik', email: 'email', phone: 'test' } as const;
+
+// // user3.newKey = 'test';
+// // user3.name = 'test';
+
+// // Record<string, string> => { [key: string]: string};
+
+// const user4: Record<string, string> = {};
+
+// type Keys = 'red' | 'green' | 'blue';
+
+// const colorObj: Record<Keys, string> = {
+//   red: 'red',
+//   green: 'green',
+//   blue: 'blue',
 // }
+
+// type UserKeys = keyof IUser;
+
+// type Colors = { [K in Keys]: string }
+
+// // Partial<IUser> - сделает весь интефейс опциональным
+// // 
+
+
+// interface IPublicUser {
+//   name: string;
+//   email: string;
+// };
+
+// interface IPrivateUser extends IPublicUser {
+//   password: string;
+// };
+
+// type PublicUser = Omit<IPrivateUser, 'password'>;
+
+
+// // type Record<K extends keyof any, T> = {
+// //   [P in K]: T;
+// // };
+
+// // interface IColor {
+// //   [P in Keys]: string;
+// // }
 
 
 

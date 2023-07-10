@@ -2,8 +2,15 @@
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */
 
+    // target mapping https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping
+    // tsconfig https://gist.github.com/KRostyslav/82a25c469ffa6652825d58537ac6bc22
+
+    // target
     "target": "ES2021",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    
+    // commonjs и ecmascript module import/exports
     "module": "commonjs",
+
     "lib": [
       "ES2021",
       "dom"
@@ -12,9 +19,9 @@
     "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
 
-    "strict": true,
+    "strict": true, // Разрешаем any
     
-    "outDir": "./dest",  /* Enable all strict type-checking options. */
+    "outDir": "./dist",  /* Enable all strict type-checking options. */
     "declaration": true,
 
     /* Projects */
