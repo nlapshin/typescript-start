@@ -40,5 +40,6 @@ const userRoles: Record<TypeUserRoles, TypeUserRoles> = {
 // ts-node + nodemon - ts-node + watch режим.
 // tsc -w - watch режим.
 // ts-node-dev - ts-node с watch режимом.
+// Позволяют быстро билдить код.
 // tsup - билдер на базе esbuild
 // swc - билдер на базе Rust

@@ -1,3 +1,4 @@
+import { User } from './namespaces';
 function loggedMethod(prefix: string) {
   return function loggedMethod(originalMethod: any, _context: any) {
     function replacementMethod(this: any, ...args: any[]) {
@@ -10,7 +11,29 @@ function loggedMethod(prefix: string) {
   }
 }
 
+// Это фича классов.
+// Декорировать сами классы
+// На методы
+// На свойства
+// На аргументы
 
+const bigJsonObject = {
+  username: 'nik',
+  password: '12341235'
+} // Схема валидации.
+
+const bigJsonObjectSchema = Joi.object({
+  username: Joi.string()
+      .alphanum()
+      .min(3)
+      .max(30)
+      .required(),
+
+  password: Joi.string()
+      .pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+})
+
+// @classDecorator()
 class Person {
   name: string;
   constructor(name: string) {
@@ -20,6 +43,14 @@ class Person {
   @loggedMethod("Prefix")
   greet() {
     console.log(`Hello, my name is ${this.name}.`); 
+  }
+
+  @validationDecorator(bigJsonObjectSchema)
+  applyFuncion(bigJsonObject) {
+    // Сначала валидируем его bigJsonObject
+
+    // const validationResult = bigJsonObjectSchema(bigJsonObject, bigJsonObjectSchema)
+    // if (validationResult.errors.length !== 0) { throw new ValidationError('test')}
   }
 }
 const p = new Person("Ray");

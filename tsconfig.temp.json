@@ -1,16 +1,57 @@
 {
-  "include": [], // Файлы которые включаем
-  "exclude": [], // ФАйлы исключаем
-  "files": [], // Для включение декларативных файлов
   "compilerOptions": {
-    "target": "ES2021",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "target": "ES2021",
     "lib": [
       "ES2021",
-      "dom" // dom
+      "dom"
     ],
-    "module": "commonjs", // commonjs или ecmascript(nodenext);
-    "types": ["node", "jest"], // Если указан параметр "types", то из всех найденных будут использованы только те описания типов, что указаны в его массиве, а именно: "./typings/node", "./typings/lodash", "./typings/express".
-  } // 
+    "module": "commonjs", // "esnext" 
+    "types": ["node", "jest"], 
+  },
+  "include": [],
+  "exclude": [],
+  "files": []
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//   "include": [], // Файлы которые включаем
+//   "exclude": [], // ФАйлы исключаем
+//   "files": [], // Для включение декларативных файлов
+//   "compilerOptions": {
+//     "target": "ES2021",                                  /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+//     "lib": [
+//       "ES2021",
+//       "dom" // dom
+//     ],
+//     "module": "commonjs", // commonjs или ecmascript(nodenext);
+//     "types": ["node", "jest"], // Если указан параметр "types", то из всех найденных будут использованы только те описания типов, что указаны в его массиве, а именно: "./typings/node", "./typings/lodash", "./typings/express".
+//   } // 
+// }
 
 // "lib": ["es5", "es6", "es2015.promise", "es2016.array.include"], // Набор библиотечных файлов полифилов, которые будут включены в итоговый выходной файл.

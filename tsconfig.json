@@ -23,6 +23,8 @@
     
     "outDir": "./dist",  /* Enable all strict type-checking options. */
     "declaration": true,
+    "removeComments": true,
+    "types": ["./src/no-declaration-lib.d.ts"]
 
     /* Projects */
     // "incremental": true,                              /* Save .tsbuildinfo files to allow for incremental compilation of projects. */
